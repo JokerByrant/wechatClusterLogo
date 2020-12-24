@@ -4,17 +4,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @author 一池春水倾半城
  * @date 2020年12月24日
  * @Description
  */
-@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebMvc
-public class WebMvcConfig extends WebMvcConfigurerAdapter{
+public class WebMvcConfig implements WebMvcConfigurer {
 
   @Value("${service.upload.location}")
   private String uploadPath;
@@ -27,5 +26,4 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
 	  //图片地址映射,映射成url就可以访问的
 	  registry.addResourceHandler("/img/**").addResourceLocations("file:" + uploadPath);
   }
-
 }
