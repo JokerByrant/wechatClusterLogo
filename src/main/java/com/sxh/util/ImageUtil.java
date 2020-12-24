@@ -308,9 +308,10 @@ public class ImageUtil {
 
 	public static void main(String[] argo) throws IOException {
 		List<String> images = new LinkedList<>();
-		while(images.size() < 9) {
-			images.add("http://localhost:8001/images/1.png");
-			getCombinedPic(images, "D://imgTest/", images.size()+"", 0);
+		for (int i = 1; i <= 9; i++) {
+			images.add("http://localhost:8001/images/"+ i +".png");
+			getCombinedPic(images, "D://imgTest/rect/", images.size()+"", 0);
+			getCombinedPic(images, "D://imgTest/circle/", images.size()+"", 1);
 		}
     }
 }
