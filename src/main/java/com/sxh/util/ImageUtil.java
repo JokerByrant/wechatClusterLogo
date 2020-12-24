@@ -229,7 +229,7 @@ public class ImageUtil {
 	 * @param bb 比例不对时是否需要补白
 	 * @param isCircle 是否裁剪成圆形
 	 */
-	public static BufferedImage resize2(String filePath, int width, int height, boolean bb, boolean isCircle) {
+	private static BufferedImage resize2(String filePath, int width, int height, boolean bb, boolean isCircle) {
 		try {
 			double ratio; // 缩放比例
 			BufferedImage bi = null;
